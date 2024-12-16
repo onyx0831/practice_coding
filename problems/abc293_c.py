@@ -7,7 +7,8 @@ for S in range(1 << (h+w-2)):
         continue
     x, y = 0, 0
     good_path = True
-    st = set([A[x][y]])
+    st = set()
+    st.add(A[x][y])
     for i in range(h+w-2):
         if S >> i & 1:
             x += 1
