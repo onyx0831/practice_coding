@@ -2,7 +2,9 @@ h, w = map(int, input().split())
 A = [list(map(int, input().split())) for _ in range(h)]
 ans = 0
 
+# Sは進行方向を表すh+w-2ケタのビット列、全て列挙
 for S in range(1 << (h+w-2)):
+    # 下移動の回数がh-1回でない場合はスキップ
     if S.bit_count() != h-1:
         continue
     x, y = 0, 0
